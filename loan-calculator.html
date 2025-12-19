@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Loan Calculator - Janus AG Finance</title>
+    <meta name="description" content="Calculate your farm loan payments with our free agricultural loan calculator. Estimate monthly payments, interest, and total cost for farm and ranch loans.">
+    <meta name="keywords" content="farm loan calculator, agricultural loan calculator, farm mortgage calculator, ranch loan calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.janusfarmloans.com/loan-calculator.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" aria-label="Janus AG Finance Home">JANUS AG FINANCE</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Loans & Financing <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="loans/farm-ranch.html">Farm And Ranch Loans</a></li>
+                            <li><a href="loans/commercial-horse.html">Commercial Horse Properties</a></li>
+                            <li><a href="loans/farm-equity.html">Farm Equity Line-of-credit</a></li>
+                            <li><a href="loans/rural-property.html">Rural Property Loan</a></li>
+                            <li><a href="loans/grove-orchard.html">Grove And Orchard Loans</a></li>
+                            <li><a href="loans/vineyard.html">Vineyard Loans</a></li>
+                            <li><a href="loans/siblings-buyout.html">Siblings Buy-Out</a></li>
+                            <li><a href="loans/bridge.html">Bridge Loans</a></li>
+                            <li><a href="loans/land-development.html">Agricultural Land Development Loans</a></li>
+                            <li><a href="loans/wind-power.html">Wind Power Financing</a></li>
+                            <li><a href="loans/solar-power.html">Solar Power Financing for Farms</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about/leadership.html">Leadership</a></li>
+                            <li><a href="about/approach.html">Our Approach</a></li>
+                            <li><a href="about/lending-process.html">Lending Process</a></li>
+                            <li><a href="about/faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="states.html">States We Serve</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Get A Loan <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="get-loan/how-to.html">How To get a Farm Loan</a></li>
+                            <li><a href="get-loan/get-started.html">Get Started</a></li>
+                            <li><a href="loan-calculator.html" class="active">Loan Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="brokers.html">Brokers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-phone"><a href="tel:303-847-0611">303-847-0611</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header" style="background-image: linear-gradient(135deg, rgba(45, 80, 22, 0.85) 0%, rgba(74, 122, 42, 0.85) 100%), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <h1>Farm Loan Calculator</h1>
+            <p>Calculate your monthly payments and total loan cost</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="get-loan/get-started.html">Get A Loan</a></li>
+                <li><span>Loan Calculator</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <section class="page-content">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <!-- Calculator Form -->
+                <div class="form-container">
+                    <h2>Loan Calculator</h2>
+                    <p>Enter your loan details to calculate monthly payments and total interest.</p>
+                    
+                    <form id="calculator-form">
+                        <div class="form-group">
+                            <label for="loan-amount-calc">Loan Amount ($) *</label>
+                            <input type="number" id="loan-amount-calc" name="loan-amount" min="10000" step="1000" placeholder="500000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interest-rate">Annual Interest Rate (%) *</label>
+                            <input type="number" id="interest-rate" name="interest-rate" min="0" max="20" step="0.125" placeholder="5.5" required>
+                            <small style="color: var(--text-light); font-size: 0.875rem;">Current rates vary by loan type and credit</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loan-term">Loan Term (Years) *</label>
+                            <select id="loan-term" name="loan-term" required>
+                                <option value="">Select term</option>
+                                <option value="5">5 years</option>
+                                <option value="10">10 years</option>
+                                <option value="15">15 years</option>
+                                <option value="20">20 years</option>
+                                <option value="25">25 years</option>
+                                <option value="30" selected>30 years</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="down-payment">Down Payment ($)</label>
+                            <input type="number" id="down-payment" name="down-payment" min="0" step="1000" placeholder="0" value="0">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Calculate</button>
+                        <button type="button" id="reset-calculator" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Reset</button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div class="form-container">
+                    <h2>Loan Summary</h2>
+                    <div id="calculator-results" style="display: none;">
+                        <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-color);">
+                                <strong style="color: var(--text-dark);">Monthly Payment:</strong>
+                                <span id="monthly-payment" style="color: var(--primary-color); font-size: 1.5rem; font-weight: 700;">$0.00</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 0.75rem; display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-light);">Total Loan Amount:</span>
+                                <span id="total-loan" style="color: var(--text-dark); font-weight: 600;">$0.00</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 0.75rem; display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-light);">Total Interest Paid:</span>
+                                <span id="total-interest" style="color: var(--text-dark); font-weight: 600;">$0.00</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 0.75rem; display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-light);">Total Amount Paid:</span>
+                                <span id="total-payment" style="color: var(--text-dark); font-weight: 600;">$0.00</span>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                                <div style="margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-light);">Number of Payments:</span>
+                                    <span id="num-payments" style="color: var(--text-dark); font-weight: 600;">0</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-light);">Down Payment:</span>
+                                    <span id="down-payment-display" style="color: var(--text-dark); font-weight: 600;">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: var(--primary-color); color: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <p style="margin-bottom: 1rem; opacity: 0.9;">Ready to apply for your loan?</p>
+                            <a href="get-loan/get-started.html" class="btn btn-primary" style="background: var(--accent-color); color: var(--text-dark);">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div id="calculator-placeholder" style="text-align: center; padding: 3rem 1rem; color: var(--text-light);">
+                        <p style="font-size: 1.125rem; margin-bottom: 0.5rem;">Enter loan details to see calculations</p>
+                        <p style="font-size: 0.875rem;">Fill out the form on the left and click "Calculate"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Understanding Your Loan Calculation</h2>
+                <p>Our loan calculator helps you estimate your monthly payments and total loan cost. Here's what each component means:</p>
+                
+                <h3>Loan Amount</h3>
+                <p>The total amount you're borrowing for your agricultural property purchase or refinance.</p>
+                
+                <h3>Interest Rate</h3>
+                <p>The annual percentage rate (APR) you'll pay on the loan. Rates vary based on loan type, credit score, and market conditions.</p>
+                
+                <h3>Loan Term</h3>
+                <p>The length of time you have to repay the loan. Longer terms mean lower monthly payments but more total interest paid.</p>
+                
+                <h3>Down Payment</h3>
+                <p>The initial payment you make toward the property purchase. A larger down payment reduces your loan amount and monthly payments.</p>
+                
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>This calculator provides estimates only. Actual rates and terms may vary.</li>
+                    <li>Additional fees (closing costs, insurance, etc.) are not included in this calculation.</li>
+                    <li>Contact us for personalized rate quotes and loan terms.</li>
+                    <li>Rates are subject to change based on market conditions and your qualifications.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JANUS AG FINANCE</h3>
+                    <p>Expert agricultural financing with over 30 years of experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shortcuts</h4>
+                    <ul>
+                        <li><a href="loans/farm-ranch.html">Loans & Financing</a></li>
+                        <li><a href="about/leadership.html">About</a></li>
+                        <li><a href="brokers.html">Brokers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li><a href="tel:303-847-0611">📞 303-847-0611</a></li>
+                        <li><a href="mailto:bob@janusmortgage.com">✉️ bob@janusmortgage.com</a></li>
+                        <li>📍 Denver, CO</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Janus AG Finance. All rights reserved.</p>
+                <p><a href="sitemap.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
+    <script src="/script.js"></script>
+    <script src="/calculator.js"></script>
+</body>
+</html>
+
+
+

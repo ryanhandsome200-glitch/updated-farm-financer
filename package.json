@@ -1,0 +1,29 @@
+{
+  "name": "farmfinancer-website",
+  "version": "1.0.0",
+  "description": "Modern agricultural financing website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000 || npx http-server -p 8000",
+    "start": "python -m http.server 8000 || npx http-server -p 8000",
+    "validate": "echo 'HTML validation - use online validators or browser dev tools'",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "keywords": [
+    "farm-loans",
+    "agricultural-financing",
+    "static-website"
+  ],
+  "author": "FarmFinancer",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[your-username]/[your-repo].git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
