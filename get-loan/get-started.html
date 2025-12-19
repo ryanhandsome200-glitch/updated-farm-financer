@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Janus AG Finance</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html">JANUS AG FINANCE</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Loans & Financing <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../loans/farm-ranch.html">Farm And Ranch Loans</a></li>
+                            <li><a href="../loans/commercial-horse.html">Commercial Horse Properties</a></li>
+                            <li><a href="../loans/farm-equity.html">Farm Equity Line-of-credit</a></li>
+                            <li><a href="../loans/rural-property.html">Rural Property Loan</a></li>
+                            <li><a href="../loans/grove-orchard.html">Grove And Orchard Loans</a></li>
+                            <li><a href="../loans/vineyard.html">Vineyard Loans</a></li>
+                            <li><a href="../loans/siblings-buyout.html">Siblings Buy-Out</a></li>
+                            <li><a href="../loans/bridge.html">Bridge Loans</a></li>
+                            <li><a href="../loans/land-development.html">Agricultural Land Development Loans</a></li>
+                            <li><a href="../loans/wind-power.html">Wind Power Financing</a></li>
+                            <li><a href="../loans/solar-power.html">Solar Power Financing for Farms</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../about/leadership.html">Leadership</a></li>
+                            <li><a href="../about/approach.html">Our Approach</a></li>
+                            <li><a href="../about/lending-process.html">Lending Process</a></li>
+                            <li><a href="../about/faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../states.html">States We Serve</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Get A Loan <span class="arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-to.html">How To get a Farm Loan</a></li>
+                            <li><a href="get-started.html" class="active">Get Started</a></li>
+                            <li><a href="../loan-calculator.html">Loan Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../brokers.html">Brokers</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li class="nav-phone"><a href="tel:303-847-0611">303-847-0611</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header" style="background-image: linear-gradient(135deg, rgba(45, 80, 22, 0.85) 0%, rgba(74, 122, 42, 0.85) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <h1>Get Started</h1>
+            <p>Begin your loan application today</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Want to estimate your payments first? <a href="../loan-calculator.html" style="color: var(--primary-color); font-weight: 600;">Try our Loan Calculator</a></p>
+            </div>
+            <div class="form-container">
+                <h2>Pre-Qualification Form</h2>
+                <p>Fill out this form to get started with your loan application. We'll contact you within 24-48 hours to discuss your financing needs.</p>
+                
+                <form id="loan-application-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loan-type">Loan Type *</label>
+                        <select id="loan-type" name="loan-type" required>
+                            <option value="">Select a loan type</option>
+                            <option value="farm-ranch">Farm And Ranch Loans</option>
+                            <option value="commercial-horse">Commercial Horse Properties</option>
+                            <option value="farm-equity">Farm Equity Line-of-credit</option>
+                            <option value="rural-property">Rural Property Loan</option>
+                            <option value="grove-orchard">Grove And Orchard Loans</option>
+                            <option value="vineyard">Vineyard Loans</option>
+                            <option value="siblings-buyout">Siblings Buy-Out</option>
+                            <option value="bridge">Bridge Loans</option>
+                            <option value="land-development">Agricultural Land Development Loans</option>
+                            <option value="wind-power">Wind Power Financing</option>
+                            <option value="solar-power">Solar Power Financing for Farms</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property-location">Property Location *</label>
+                        <input type="text" id="property-location" name="property-location" placeholder="City, State" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loan-amount">Estimated Loan Amount</label>
+                        <input type="text" id="loan-amount" name="loan-amount" placeholder="$">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property-type">Property Type</label>
+                        <select id="property-type" name="property-type">
+                            <option value="">Select property type</option>
+                            <option value="farm">Farm</option>
+                            <option value="ranch">Ranch</option>
+                            <option value="grove">Grove/Orchard</option>
+                            <option value="vineyard">Vineyard</option>
+                            <option value="horse-property">Horse Property</option>
+                            <option value="rural-residential">Rural Residential</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Loan Purpose *</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="">Select purpose</option>
+                            <option value="purchase">Property Purchase</option>
+                            <option value="refinance">Refinance</option>
+                            <option value="improvements">Property Improvements</option>
+                            <option value="expansion">Expansion</option>
+                            <option value="working-capital">Working Capital</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your financing needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="content-section">
+                <h2>Other Ways to Contact Us</h2>
+                <p>Prefer to speak with someone directly? Contact us using any of these methods:</p>
+                <ul>
+                    <li><strong>Phone:</strong> <a href="tel:303-847-0611">303-847-0611</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:bob@janusmortgage.com">bob@janusmortgage.com</a></li>
+                    <li><strong>Location:</strong> Denver, CO</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JANUS AG FINANCE</h3>
+                    <p>Expert agricultural financing with over 30 years of experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shortcuts</h4>
+                    <ul>
+                        <li><a href="../loans/farm-ranch.html">Loans & Financing</a></li>
+                        <li><a href="../about/leadership.html">About</a></li>
+                        <li><a href="../brokers.html">Brokers</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li><a href="tel:303-847-0611">📞 303-847-0611</a></li>
+                        <li><a href="mailto:bob@janusmortgage.com">✉️ bob@janusmortgage.com</a></li>
+                        <li>📍 Denver, CO</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Janus AG Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
+
+
