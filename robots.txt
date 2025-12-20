@@ -2,10 +2,11 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.janusfarmloans.com/sitemap.html
+Sitemap: https://www.farmfinancer.com/sitemap.html
 
 # Disallow admin or private areas if any
 # Disallow: /admin/
 # Disallow: /private/
+
 
 

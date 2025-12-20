@@ -6,13 +6,15 @@
 }
 
 :root {
-    --primary-color: #2d5016;
-    --primary-dark: #1f350f;
-    --primary-light: #4a7a2a;
-    --primary-lighter: #6b9a4a;
-    --secondary-color: #8b6914;
+    /* Notre Dame Blue & Gold Color Scheme */
+    --primary-color: #0c2340;
+    --primary-dark: #041e42;
+    --primary-light: #1e3a5f;
+    --primary-lighter: #2d4a6f;
+    --secondary-color: #c99700;
     --accent-color: #d4af37;
     --accent-light: #e8c85a;
+    --accent-dark: #b8941f;
     --text-dark: #1a1a1a;
     --text-medium: #4a4a4a;
     --text-light: #6c757d;
@@ -22,10 +24,10 @@
     --border-color: #e5e7eb;
     --border-light: #f3f4f6;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow: 0 4px 6px -1px rgba(12, 35, 64, 0.1), 0 2px 4px -1px rgba(12, 35, 64, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(12, 35, 64, 0.1), 0 4px 6px -2px rgba(12, 35, 64, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(12, 35, 64, 0.1), 0 10px 10px -5px rgba(12, 35, 64, 0.04);
+    --shadow-xl: 0 25px 50px -12px rgba(12, 35, 64, 0.25);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -373,8 +375,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 151, 0, 0.12) 0%, transparent 50%);
     opacity: 1;
     animation: heroGradient 15s ease infinite;
 }

@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form handling
+    // Form handling with EmailJS
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
@@ -91,24 +91,111 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (isValid) {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.style.cssText = 'background: #28a745; color: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center; font-weight: 600; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);';
-                successMessage.innerHTML = '<p style="margin: 0; font-size: 1.125rem;">✓ Thank you! Your form has been submitted.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; opacity: 0.9;">We will contact you within 24-48 hours.</p>';
-                this.appendChild(successMessage);
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                
-                // Reset form after a delay
-                setTimeout(() => {
-                    this.reset();
-                    // Remove success message after 8 seconds
+                // Show loading state
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton ? submitButton.textContent : '';
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                }
+
+                // Prepare email template parameters
+                const emailParams = {
+                    to_email: 'skater.ryan11@gmail.com',
+                    from_name: data.name || 'Website Visitor',
+                    from_email: data.email || data['contact-email'] || 'no-reply@farmfinancer.com',
+                    phone: data.phone || data['contact-phone'] || 'Not provided',
+                    subject: data.subject || data['contact-subject'] || 'Contact Form Submission',
+                    message: data.message || data['contact-message'] || JSON.stringify(data, null, 2),
+                    form_type: this.id || 'General Contact',
+                    loan_type: data['loan-type'] || 'N/A',
+                    property_location: data['property-location'] || 'N/A',
+                    loan_amount: data['loan-amount'] || 'N/A'
+                };
+
+                // Send email using EmailJS
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.send('service_farmfinancer', 'template_farmfinancer', emailParams)
+                        .then(function(response) {
+                            console.log('Email sent successfully!', response.status, response.text);
+                            
+                            // Show success message
+                            const successMessage = document.createElement('div');
+                            successMessage.className = 'success-message';
+                            successMessage.style.cssText = 'background: #28a745; color: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center; font-weight: 600; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);';
+                            successMessage.innerHTML = '<p style="margin: 0; font-size: 1.125rem;">✓ Thank you! Your form has been submitted.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; opacity: 0.9;">We will contact you within 24-48 hours.</p>';
+                            form.appendChild(successMessage);
+                            
+                            // Scroll to success message
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            
+                            // Reset form after a delay
+                            setTimeout(() => {
+                                form.reset();
+                                // Remove success message after 8 seconds
+                                setTimeout(() => {
+                                    successMessage.remove();
+                                }, 8000);
+                            }, 2000);
+                        }, function(error) {
+                            console.error('Email sending failed:', error);
+                            
+                            // Fallback: Use mailto link
+                            const mailtoSubject = encodeURIComponent(emailParams.subject);
+                            const mailtoBody = encodeURIComponent(
+                                `Name: ${emailParams.from_name}\n` +
+                                `Email: ${emailParams.from_email}\n` +
+                                `Phone: ${emailParams.phone}\n` +
+                                `Message:\n${emailParams.message}`
+                            );
+                            window.location.href = `mailto:skater.ryan11@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+                            
+                            // Show success message (even though we're using mailto fallback)
+                            const successMessage = document.createElement('div');
+                            successMessage.className = 'success-message';
+                            successMessage.style.cssText = 'background: #28a745; color: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center; font-weight: 600; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);';
+                            successMessage.innerHTML = '<p style="margin: 0; font-size: 1.125rem;">✓ Thank you! Your email client should open.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; opacity: 0.9;">If it doesn\'t, please email us at skater.ryan11@gmail.com</p>';
+                            form.appendChild(successMessage);
+                            
+                            setTimeout(() => {
+                                form.reset();
+                                setTimeout(() => {
+                                    successMessage.remove();
+                                }, 8000);
+                            }, 2000);
+                        })
+                        .finally(function() {
+                            // Restore button
+                            if (submitButton) {
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalButtonText;
+                            }
+                        });
+                } else {
+                    // EmailJS not loaded, use mailto fallback
+                    const mailtoSubject = encodeURIComponent(emailParams.subject);
+                    const mailtoBody = encodeURIComponent(
+                        `Name: ${emailParams.from_name}\n` +
+                        `Email: ${emailParams.from_email}\n` +
+                        `Phone: ${emailParams.phone}\n` +
+                        `Message:\n${emailParams.message}`
+                    );
+                    window.location.href = `mailto:skater.ryan11@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.style.cssText = 'background: #28a745; color: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: center; font-weight: 600; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);';
+                    successMessage.innerHTML = '<p style="margin: 0; font-size: 1.125rem;">✓ Your email client should open.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; opacity: 0.9;">If it doesn\'t, please email us at skater.ryan11@gmail.com</p>';
+                    form.appendChild(successMessage);
+                    
                     setTimeout(() => {
-                        successMessage.remove();
-                    }, 8000);
-                }, 2000);
+                        form.reset();
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 8000);
+                    }, 2000);
+                }
             } else {
                 // Show error message
                 const errorMessage = document.createElement('div');
